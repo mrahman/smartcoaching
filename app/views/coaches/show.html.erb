@@ -1,0 +1,23 @@
+<p>
+  <strong>Name:</strong>
+  <%= @coach.name %>
+</p>
+ 
+<p>
+  <strong>Subject or topics:</strong>
+  <%= @coach.subject_or_topics %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @coach.address %>
+</p>
+
+<h2>Comments For this coach</h2>
+<%= render @coach.coach_comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'coach_comments/form' %>
+
+<%= link_to 'Edit', edit_coach_path(@coach) %> |
+<%= link_to 'Back', coaches_path %>
