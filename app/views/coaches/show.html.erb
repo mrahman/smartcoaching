@@ -1,8 +1,18 @@
 <p>
+  <strong>User ID:</strong>
+  <%= @coach.user_id %>
+</p>
+
+<p>
   <strong>Name:</strong>
-  <%= @coach.name %>
+  <%= @coach.first_name %> <%= @coach.last_name %>
 </p>
  
+<p>
+  <strong>Date of birth:</strong>
+  <%= @coach.dob %>
+</p>
+
 <p>
   <strong>Subject or topics:</strong>
   <%= @coach.subject_or_topics %>
@@ -12,6 +22,8 @@
   <strong>Address:</strong>
   <%= @coach.address %>
 </p>
+
+<%= image_tag @coach.avatar.url(:medium) %>
 
 <h2>Comments For this coach</h2>
 <%= render @coach.coach_comments %>

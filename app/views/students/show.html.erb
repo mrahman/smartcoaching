@@ -1,0 +1,37 @@
+<p>
+  <strong>User Id:</strong>
+  <%= @student.user_id %>
+</p>
+ 
+<p>
+  <strong>Name:</strong>
+  <%= @student.first_name %> <%= @student.last_name %>
+</p>
+ 
+<p>
+  <strong>Date of birth:</strong>
+  <%= @student.dob %>
+</p>
+ 
+<p>
+  <strong>Interests:</strong>
+  <%= @student.interests %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
+
+<p>
+  <%= image_tag @student.avatar.url(:medium) %>
+</p>
+
+<h2>Comments For this student</h2>
+<%= render @student.student_comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'student_comments/form' %>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

@@ -1,10 +1,13 @@
 <h1>Listing all registerd coaches</h1>
 
 <%= link_to 'New coach', new_coach_path %>
+<%= link_to 'Home Page', home_index_path %>
  
 <table>
   <tr>
+    <th>User ID</th>
     <th>Name</th>
+    <th>Date of birth</th>
     <th>Subject or topics</th>
     <th>Address</th>
     <th colspan="3"></th>
@@ -12,7 +15,9 @@
  
   <% @coachs.each do |coach| %>
     <tr>
-      <td><%= coach.name %></td>
+      <td><%= coach.user_id %></td>
+      <td><%= coach.first_name %> <%= coach.last_name %></td>
+      <td><%= coach.dob %></td>
       <td><%= coach.subject_or_topics %></td>
       <td><%= coach.address %></td>
       <td><%= link_to 'Show', coach_path(coach) %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181018093715) do
+ActiveRecord::Schema.define(version: 20181019034453) do
 
   create_table "coach_comments", force: :cascade do |t|
     t.string "commenter"
@@ -23,9 +23,48 @@ ActiveRecord::Schema.define(version: 20181018093715) do
   end
 
   create_table "coaches", force: :cascade do |t|
-    t.string "name"
+    t.string "user_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "dob"
     t.text "subject_or_topics"
     t.text "address"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_comments", force: :cascade do |t|
+    t.string "commenter"
+    t.string "title"
+    t.text "body"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_student_comments_on_student_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "user_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "dob"
+    t.text "interests"
+    t.text "address"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

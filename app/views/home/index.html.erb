@@ -1,3 +1,25 @@
 <h1>Online Coaching Management Systems</h1>
 
-<%= link_to 'Coaching management System', controller: 'coaches' %>
+<%= link_to 'List of coaches', controller: 'coaches' %>
+<%= link_to 'List of students', controller: 'students' %>
+
+<h3>Suggested coaches</h3>
+
+  <ol>
+  <% @coaches.each do |coach| %>
+    <li>
+      <div><%= image_tag coach.avatar.url(:medium) %></div>
+      <div><%= link_to [coach.first_name, coach.last_name].join(' '), coach_path(coach) %></div>
+    </li>
+  <% end %>
+  </ol>
+
+<h3>Suggested Students</h3>
+<ol>
+  <% @students.each do |student| %>
+    <li>
+      <div><%= image_tag student.avatar.url(:medium) %></div>
+      <div><%= link_to [student.first_name, student.last_name].join(' '), student_path(student) %></div>
+    </li>
+  <% end %>
+</ol

@@ -1,0 +1,20 @@
+  <p>
+    <strong>Commenter:</strong>
+    <%= student_comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= student_comment.title %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= student_comment.body %>
+  </p>
+
+  <p>
+    <%= link_to 'Destroy Comment', [student_comment.student, student_comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>

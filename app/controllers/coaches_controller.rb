@@ -46,6 +46,6 @@ class CoachesController < ApplicationController
 
 private
   def coach_params
-    params.require(:coach).permit(:name, :subject_or_topics, :address)
+    params.require(:coach).permit(:user_id, :first_name, :last_name, :dob, :subject_or_topics, :address, :avatar)
   end
 end
