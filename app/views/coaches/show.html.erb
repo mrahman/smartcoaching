@@ -31,5 +31,9 @@
 <h2>Add a comment:</h2>
 <%= render 'coach_comments/form' %>
 
+<%= week_calendar number_of_weeks: 2 do |date| %>
+  <%= date %>
+<% end %>
+
 <%= link_to 'Edit', edit_coach_path(@coach) %> |
 <%= link_to 'Back', coaches_path %>
