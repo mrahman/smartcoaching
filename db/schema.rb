@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181019034453) do
+ActiveRecord::Schema.define(version: 20181113062147) do
 
   create_table "coach_comments", force: :cascade do |t|
     t.string "commenter"
@@ -35,6 +35,23 @@ ActiveRecord::Schema.define(version: 20181019034453) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "educational_qualifications", primary_key: "uuid", id: :string, limit: 36, force: :cascade do |t|
+    t.string "user_id", limit: 36, null: false
+    t.string "qualification_name", limit: 128
+    t.string "institute_name", limit: 128
+    t.string "enrolled_years", limit: 64
+    t.string "graduation_date", limit: 18
+    t.string "description"
+    t.string "major", limit: 128
+    t.string "parent_body", limit: 128
+    t.string "location", limit: 64
+    t.string "result", limit: 32
+    t.string "remarks", limit: 128
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uuid"], name: "sqlite_autoindex_educational_qualifications_1", unique: true
   end
 
   create_table "student_comments", force: :cascade do |t|

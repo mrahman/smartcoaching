@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :students do
     resources :student_comments
+    resources :educational_qualifications
   end
 
   root 'home#index'

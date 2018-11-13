@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  user_id: MyString
+  qualification_name: MyString
+  institute_name: MyString
+  enrolled_years: MyString
+  graduation_date: MyString
+  description: MyString
+  major: MyString
+  parent_body: MyString
+  location: MyString
+  result: MyString
+  remarks: MyString
+
+two:
+  uuid: MyString
+  user_id: MyString
+  qualification_name: MyString
+  institute_name: MyString
+  enrolled_years: MyString
+  graduation_date: MyString
+  description: MyString
+  major: MyString
+  parent_body: MyString
+  location: MyString
+  result: MyString
+  remarks: MyString

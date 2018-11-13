@@ -27,6 +27,50 @@
   <%= image_tag @student.avatar.url(:medium) %>
 </p>
 
+<h2>Education Qualification</h2>
+<% @student.educational_qualifications.each do |qual| %>
+  <p>
+    <strong>Qualification name:</strong>
+    <%= qual.qualification_name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= qual.description %>
+  </p>
+  <p>
+    <strong>Major:</strong>
+    <%= qual.major %>
+  </p>
+  <p>
+    <strong>Institute name:</strong>
+    <%= qual.institute_name %>
+  </p>
+  <p>
+    <strong>Location:</strong>
+    <%= qual.location %>
+  </p>
+  <p>
+    <strong>Enrolled years:</strong>
+    <%= qual.enrolled_years %>
+  </p>
+  <p>
+    <strong>Graduation date:</strong>
+    <%= qual.graduation_date %>
+  </p>
+  <p>
+    <strong>Parent body:</strong>
+    <%= qual.parent_body %>
+  </p>
+  <p>
+    <strong>Result:</strong>
+    <%= qual.result %>
+  </p>
+  <p>
+    <strong>Remarks:</strong>
+    <%= qual.remarks %>
+  </p>
+<% end %>
+
 <h2>Comments For this student</h2>
 <%= render @student.student_comments %>
 

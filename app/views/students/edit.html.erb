@@ -2,4 +2,23 @@
 
 <%= render 'form' %>
 
+<h2>Add a qualification:</h2>
+<%= form_with(model: [ @student, @student.educational_qualifications.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :qualification_name %><br>
+    <%= form.text_field :qualification_name %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.label :institute_name %><br>
+    <%= form.text_field :institute_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Back', students_path %>
